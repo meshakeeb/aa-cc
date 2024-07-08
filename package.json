@@ -1,0 +1,94 @@
+{
+	"name": "advanced-ads",
+	"title": "Advanced Ads",
+	"description": "Manage and optimize your ads in WordPress",
+	"homepage": "https://wpadvancedads.com/",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/advanced-ads/advanced-ads.git"
+	},
+	"author": "Advanced Ads",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/advanced-ads/advanced-ads/issues"
+	},
+	"engines": {
+		"npm": ">=9.0.0",
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"prepare": "husky install",
+		"dev": "mix",
+		"watch": "mix watch",
+		"watch-poll": "mix watch -- --watch-options-poll=1000",
+		"hot": "mix watch --hot",
+		"build": "mix --production",
+		"lint": "lint-staged",
+		"lint:css": "stylelint \"**/*.css\" --cache",
+		"lint:scss": "stylelint \"**/*.scss\" --cache",
+		"lint:js": "eslint . --cache",
+		"lint:p": "prettier -c .",
+		"lint:pw": "prettier -w .",
+		"lint:php": "vendor/bin/phpcs",
+		"translations": "node ./tools/wp-glotpress.js",
+		"ls-phpcs": "./tools/phpcs.sh"
+	},
+	"devDependencies": {
+		"@babel/preset-react": "^7.24.7",
+		"@wordpress/eslint-plugin": "^19.2.0",
+		"@wordpress/stylelint-config": "^21.38.0",
+		"async": "^3.2.5",
+		"browser-sync": "^3.0.2",
+		"browser-sync-webpack-plugin": "^2.3.0",
+		"chalk": "^5.3.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"husky": "^9.0.11",
+		"laravel-mix": "^6.0.49",
+		"lint-staged": "^15.2.2",
+		"mix-tailwindcss": "^1.3.0",
+		"postcss": "^8.4.38",
+		"prettier": "^3.2.5",
+		"resolve-url-loader": "^5.0.0",
+		"sass": "^1.72.0",
+		"sass-loader": "^14.1.1",
+		"shelljs": "^0.8.5",
+		"tailwindcss": "^3.4.3",
+		"webpack": "^5.91.0"
+	},
+	"dependencies": {
+		"classnames": "^2.5.1"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 1 Android versions",
+		"last 1 ChromeAndroid versions",
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Safari versions",
+		"last 2 iOS versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions"
+	],
+	"lint-staged": {
+		"*.js": [
+			"prettier -c",
+			"eslint --cache"
+		],
+		"*.(sa|sc|c)ss": [
+			"prettier -c",
+			"stylelint --cache"
+		],
+		"*.php": "vendor/bin/phpcs",
+		"*.md": "prettier -c"
+	},
+	"glotpress": {
+		"project": "advanced-ads",
+		"destination": "./languages/"
+	},
+	"wpPot": {
+		"output": "/languages/",
+		"file": "advanced-ads.pot",
+		"domain": "advanced-ads"
+	}
+}

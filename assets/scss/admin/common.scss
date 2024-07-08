@@ -1,0 +1,49 @@
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable no-invalid-position-at-import-rule */
+@config "../../../tailwind.config.common.js";
+@import "../bootstrap/tailwind";
+@import "../bootstrap/variables";
+@import "../partials/header";
+@import "../partials/header-tabs";
+@import "../partials/tab-card";
+
+.#{$namespace}-page {
+	background: #f8f9fa;
+}
+
+.#{$namespace}-wrap {
+	*,
+	::before,
+	::after {
+		@apply box-border border-0 border-solid;
+	}
+
+	::before,
+	::after {
+		--tw-content: "";
+	}
+
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	h2 {
+		@apply text-xl m-0 mb-4;
+	}
+
+	.notice {
+		@apply border border-l-4 #{"!"}m-0;
+	}
+
+	input:not([type="file"]),
+	textarea {
+		@apply border border-advads;
+	}
+}
+
+.wrap {
+	&:empty {
+		@apply hidden;
+	}
+}

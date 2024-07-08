@@ -1,0 +1,75 @@
+{
+	"name": "advanced-ads/advanced-ads",
+    "description": "Manage and optimize your ads in WordPress",
+	"keywords": [
+		"wordpress",
+		"ads",
+		"plugin"
+	],
+	"homepage": "https://wpadvancedads.com/",
+	"version": "1.48.2",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"prefer-stable": true,
+	"minimum-stability": "dev",
+	"authors": [
+		{
+			"name": "Advanced Ads",
+			"email": "support@wpadvancedads.com",
+			"homepage": "https://wpadvancedads.com/"
+		}
+	],
+	"support": {
+		"forum": "https://wordpress.org/support/plugin/advanced-ads"
+	},
+	"require": {
+		"php": ">=7.2",
+		"advanced-ads/framework": "dev-main",
+		"mobiledetect/mobiledetectlib": "^2.8.41"
+	},
+	"require-dev": {
+		"lucatume/wp-browser": "^4.0",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"wp-coding-standards/wpcs": "^3.0.0"
+	},
+	"config": {
+		"autoloader-suffix": "_AdvancedAds",
+		"optimize-autoloader": true,
+		"sort-packages": true,
+		"platform": {
+			"php": "8.1"
+		},
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Advanced_Ads\\": "src"
+		},
+		"classmap": [
+			"includes/",
+			"admin/",
+			"classes/",
+			"public/",
+			"modules/ad-positioning/",
+			"modules/pef/",
+			"modules/one-click/"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"composer global require wp-cli/wp-cli",
+			"composer global require wp-cli/i18n-command"
+		],
+		"build": "sh ./tools/build.sh",
+		"codecept": "vendor/bin/codecept",
+		"tests": "vendor/bin/codecept run",
+		"clean-tests": [
+			"vendor/bin/codecept dev:stop",
+			"vendor/bin/codecept clean",
+			"vendor/bin/codecept chromedriver:update",
+			"vendor/bin/codecept build"
+		]
+	}
+}

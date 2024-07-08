@@ -1,0 +1,126 @@
+@import "../bootstrap/variables";
+@import "../partials/spinner";
+@import "../partials/switch";
+
+#advads-m2-connect {
+	@apply hidden;
+
+	a {
+		@apply text-primary;
+	}
+}
+
+#welcome {
+	@apply bg-repeat;
+	> *,
+	a {
+		@apply text-white;
+	}
+
+	p {
+		@apply text-justify;
+	}
+
+	#dismiss-welcome {
+		@apply absolute flex items-center right-0 top-0 justify-center;
+		width: 50px;
+		height: 50px;
+
+		.dashicons {
+			@apply cursor-pointer;
+		}
+	}
+
+	> div {
+		@apply p-6;
+	}
+
+	@media screen and (min-width: 601px) {
+		> div {
+			@apply grid grid-cols-2;
+			column-gap: 100px;
+			padding: 50px;
+
+			> div:last-child {
+				@apply flex items-center;
+			}
+		}
+	}
+
+	#head {
+		@apply block;
+		font-size: 1.75rem;
+		margin: 15px 0 30px 0;
+	}
+
+	#subhead {
+		@apply text-base font-medium block m-0 uppercase;
+	}
+
+	#cta {
+		margin-top: 50px;
+		width: 100%;
+
+		a {
+			padding: 12px 20px;
+			@apply inline-block no-underline;
+		}
+
+		&:after {
+			@apply block content-[""] clear-both;
+		}
+	}
+
+	#launch-wizard {
+		border-radius: 5px;
+		background: #1b193a;
+		color: #fff;
+
+		&:hover {
+			transition: ease-in-out 250ms;
+			background: #000;
+		}
+	}
+
+	#first-step {
+		@apply underline pr-0 #{!important};
+		text-underline-offset: 0.25rem;
+		&:after {
+			font-family: dashicons;
+			@apply inline-block ml-1.5 align-middle content-["\f118"];
+		}
+	}
+
+	@media screen and (min-width: 1020px) {
+		#cta {
+			@apply w-full;
+			margin-top: 50px;
+
+			> * {
+				@apply align-middle;
+			}
+
+			&:after {
+				@apply block content-[""] clear-both;
+			}
+		}
+
+		#launch-wizard {
+			@apply float-left;
+			box-shadow: 0 0 20px 0 rgb(242 252 255 / 20%);
+		}
+
+		#first-step {
+			@apply float-right;
+		}
+	}
+
+	#welcome-thumbnail {
+		@apply inline-block;
+		box-shadow: 0 0 20px 0 rgb(27 24 58 / 20%);
+
+		img {
+			@apply max-w-full;
+		}
+	}
+}

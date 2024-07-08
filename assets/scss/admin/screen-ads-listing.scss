@@ -1,0 +1,22 @@
+@import "../bootstrap/variables";
+@import "../partials/post-type-list.scss";
+
+.column-ad_type {
+	width: 50px;
+}
+
+.advads-datetime {
+	input,
+	select {
+		@apply leading-6 text-sm;
+	}
+	@media screen and (min-width: 783px) {
+		select {
+			margin-top: -4px;
+		}
+	}
+}
+
+.inline-edit-col-left .inline-edit-group {
+	@apply hidden;
+}

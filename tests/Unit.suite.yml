@@ -1,0 +1,17 @@
+actor: UnitTester
+suite_namespace: Tests\PHPUnit
+modules:
+    enabled:
+        - lucatume\WPBrowser\Module\WPLoader
+    config:
+        lucatume\WPBrowser\Module\WPLoader:
+           wpRootFolder: "%WORDPRESS_ROOT_DIR%"
+           dbUrl: '%WORDPRESS_DB_URL%'
+           dump: 'tests/Support/Data/dump.sql'
+           tablePrefix: '%WORDPRESS_TABLE_PREFIX%'
+           wpDebug: true
+           domain: '%WORDPRESS_DOMAIN%'
+           adminEmail: 'admin@%WORDPRESS_DOMAIN%'
+           title: 'PHPUnit Tests'
+           plugins: ['advanced-ads/advanced-ads.php']
+           theme: ''

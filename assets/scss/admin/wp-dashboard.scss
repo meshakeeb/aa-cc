@@ -1,0 +1,85 @@
+@import "../bootstrap/variables";
+
+.#{$namespace}-logo {
+	&--icon {
+		@apply mr-3 h-5 w-5;
+	}
+
+	&--text {
+		@apply flex-grow;
+	}
+}
+
+##{$namespace}-dashboard-widget {
+	&-hide + span {
+		@apply hidden;
+	}
+
+	.#{$namespace}-widget-header {
+		@apply text-sm;
+
+		a {
+			@apply underline underline-offset-4 px-1;
+		}
+	}
+
+	.#{$namespace}-widget-buttons {
+		@apply py-1;
+	}
+
+	h3 {
+		@apply py-2.5 px-3 my-3 font-semibold bg-gray-50/70;
+		@apply -mx-3 #{!important};
+		border: solid $border-color;
+		border-width: 1px 0;
+	}
+
+	a {
+		@apply no-underline;
+	}
+
+	.dashicons-external {
+		@apply align-[-4px] ml-1;
+	}
+
+	.rss-widget li a {
+		@apply font-medium;
+	}
+
+	footer {
+		@apply px-2 pt-3 -mx-3 mt-2.5;
+		border-top: 1px solid $border-color;
+
+		a {
+			@apply px-2.5 no-underline;
+			border-right: 1px solid $border-color;
+		}
+
+		:last-child {
+			@apply border-r-0;
+		}
+
+		a.go-pro {
+			@apply text-emerald-500 font-medium;
+		}
+
+		.dashicons-external {
+			@apply text-lg;
+		}
+	}
+}
+
+.index-php {
+	div.advads-stats-box {
+		margin: 0;
+		flex: 0 0 calc(33.33% - 8pt);
+
+		.advads-stats-age {
+			@apply clear-left float-left text-left;
+		}
+	}
+
+	div.advads-stats-dd-container {
+		@apply float-left text-left;
+	}
+}
