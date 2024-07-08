@@ -8,6 +8,7 @@ Stable tag: 1.52.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+
 Manage and optimize all ad types. Support for Google AdSense Auto ads, Amazon, image banners, HTML, page builder, ad widget, ad rotations, ads.txt
 
 == Description ==
@@ -151,7 +152,7 @@ Like j4ckson185, there are thousands of happy AdSense users:
 
 https://vimeo.com/577170591
 
-= Add-Ons = 
+= Add-Ons =
 
 * all add-ons include priority email support
 * [All Access](https://wpadvancedads.com/add-ons/all-access/?utm_source=wporg&utm_medium=link&utm_campaign=wp-add-ons) – includes all available add-ons
